@@ -21,6 +21,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Tree"))
+        {
+            GameManager.Instance.EndGame();
+        }
+    }
+
     private void HandleMovement()
     {
         Vector2 movementInput = new Vector2(
