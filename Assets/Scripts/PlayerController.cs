@@ -15,9 +15,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
+        if (GameManager.Instance.canPlayerControl)
+        {
+            HandleMovement();
+        }
     }
-    
+
     private void HandleMovement()
     {
         Vector2 movementInput = new Vector2(
