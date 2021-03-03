@@ -46,6 +46,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            StartCoroutine(DoRestart(0));
+        }
+    }
+
     public void EndGame(bool hasWon = false)
     {
         canPlayerControl = false;
