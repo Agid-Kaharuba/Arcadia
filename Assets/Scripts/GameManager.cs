@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int solidersPicked;
     public bool canPlayerControl = true;
     public int rescuedToWin = 3;
+    [SerializeField] private AudioSource winAudio;
 
     public int RescuedCount
     {
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
 
         if (hasWon)
         {
+            winAudio.Play();
             UIManager.Instance.ShowWin(true);
         }
         else

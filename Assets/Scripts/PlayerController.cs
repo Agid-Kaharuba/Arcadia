@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] [Min(0)] private float speed = 1f;
     [SerializeField] private SpriteRenderer mainSpriteRenderer;
+    [SerializeField] private AudioSource crashAudio;
+    [SerializeField] private AudioSource helicopterAudio;
 
     private Rigidbody2D rb;
 
@@ -26,6 +28,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Tree"))
         {
+            helicopterAudio.Stop();
+            crashAudio.Play();
             GameManager.Instance.EndGame();
         }
     }

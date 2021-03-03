@@ -6,6 +6,8 @@ public class PickupController : MonoBehaviour
 {
     [SerializeField] private int humanCount;
     [SerializeField] private int maxHumanCount = 3;
+    [SerializeField] private AudioSource powerupAudio;
+    [SerializeField] private AudioSource dropAudio;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,6 +25,9 @@ public class PickupController : MonoBehaviour
     {
         // TODO maybe do some fancy animation here for humans being dropped off
         
+        // Play some sounds here
+        dropAudio.Play();
+
         GameManager.Instance.RescuedCount += humanCount;
         GameManager.Instance.PickedCount = 0;
         humanCount = 0;
@@ -36,6 +41,7 @@ public class PickupController : MonoBehaviour
             Destroy(other.gameObject);
             humanCount++;
             GameManager.Instance.PickedCount++;
+            powerupAudio.Play();
         }
     }
 }
