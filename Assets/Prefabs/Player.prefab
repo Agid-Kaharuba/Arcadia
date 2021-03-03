@@ -519,8 +519,8 @@ GameObject:
   - component: {fileID: 1584078572234756152}
   - component: {fileID: 1584078572234756159}
   - component: {fileID: 1584078572234756153}
-  - component: {fileID: 1204649354657421731}
   - component: {fileID: 888870485117275310}
+  - component: {fileID: 3252792746316860185}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -580,37 +580,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7a888ef5b744b38d9bf2d537a2545c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.004
+  speed: 0.0025
   mainSpriteRenderer: {fileID: 1584078572326561954}
   crashAudio: {fileID: 1030621026}
   helicopterAudio: {fileID: 118400463}
-  moveSlowdown: 0.06
---- !u!61 &1204649354657421731
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584078572234756154}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
-  m_EdgeRadius: 0
+  moveSlowdown: 0.05
 --- !u!114 &888870485117275310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,6 +601,44 @@ MonoBehaviour:
   maxHumanCount: 3
   powerupAudio: {fileID: 1213550017}
   dropAudio: {fileID: 1426785161}
+--- !u!60 &3252792746316860185
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584078572234756154}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.24491365, y: -0.044572607}
+      - {x: 0.45867288, y: -0.010506973}
+      - {x: 0.4611643, y: 0.101942115}
+      - {x: 0.27493304, y: 0.0724974}
+      - {x: 0.1587707, y: 0.18245758}
+      - {x: 0.18131071, y: 0.31875366}
+      - {x: -0.4373195, y: 0.31553945}
+      - {x: -0.38520816, y: 0.16520146}
+      - {x: -0.40539676, y: 0.011105262}
+      - {x: -0.38150358, y: -0.1459695}
+      - {x: -0.29043525, y: -0.30233282}
+      - {x: 0.13955697, y: -0.29984444}
+      - {x: 0.13911705, y: -0.13443786}
 --- !u!1 &1584078572326561964
 GameObject:
   m_ObjectHideFlags: 0
