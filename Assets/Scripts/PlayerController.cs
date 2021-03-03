@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] [Min(0)] private float speed = 1f;
+    [SerializeField] private SpriteRenderer mainSpriteRenderer;
 
     private Rigidbody2D rb;
 
@@ -37,5 +38,18 @@ public class PlayerController : MonoBehaviour
         Vector2 displacement = movementInput.normalized * speed;
         
         rb.MovePosition(rb.position + displacement);
+        
+        // Do sprite flipping
+        if (mainSpriteRenderer != null)
+        {
+            if (movementInput.x > 0)
+            {
+                mainSpriteRenderer.flipX = true;
+            }
+            else if (movementInput.x < 0)
+            {
+                mainSpriteRenderer.flipX = false;
+            }
+        }
     }
 }
