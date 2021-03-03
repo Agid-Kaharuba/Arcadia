@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource crashAudio;
     [SerializeField] private AudioSource helicopterAudio;
     [SerializeField, Range(0, 1)] private float moveSlowdown = 0.3f;
+    [SerializeField] private Vector2 windVelocity = Vector2.zero;
 
     private Vector2 velocity;
     private Rigidbody2D rb;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
         Vector2 displacement = movementInput.normalized * speed;
         velocity += displacement;
 
-        rb.MovePosition(rb.position + velocity);
+        rb.MovePosition(rb.position + velocity + windVelocity);
         
         // Slow down the helicopter
         velocity = Vector2.Lerp(velocity, Vector2.zero, moveSlowdown);

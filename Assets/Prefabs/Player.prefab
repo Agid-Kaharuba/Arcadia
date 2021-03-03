@@ -585,6 +585,7 @@ MonoBehaviour:
   crashAudio: {fileID: 1030621026}
   helicopterAudio: {fileID: 118400463}
   moveSlowdown: 0.05
+  windVelocity: {x: 0.0001, y: 0.0004}
 --- !u!114 &888870485117275310
 MonoBehaviour:
   m_ObjectHideFlags: 0
