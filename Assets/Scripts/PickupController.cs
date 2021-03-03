@@ -23,8 +23,8 @@ public class PickupController : MonoBehaviour
     {
         // TODO maybe do some fancy animation here for humans being dropped off
         
-        GameManager.Instance.soldiersRescued += humanCount;
-        GameManager.Instance.solidersPicked = 0;
+        GameManager.Instance.RescuedCount += humanCount;
+        GameManager.Instance.PickedCount = 0;
         humanCount = 0;
     }
 
@@ -35,7 +35,7 @@ public class PickupController : MonoBehaviour
             // Pickup the human...so destroy it
             Destroy(other.gameObject);
             humanCount++;
-            GameManager.Instance.solidersPicked++;
+            GameManager.Instance.PickedCount++;
         }
     }
 }
