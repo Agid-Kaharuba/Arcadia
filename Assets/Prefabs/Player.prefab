@@ -580,10 +580,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7a888ef5b744b38d9bf2d537a2545c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.06
+  speed: 0.004
   mainSpriteRenderer: {fileID: 1584078572326561954}
   crashAudio: {fileID: 1030621026}
   helicopterAudio: {fileID: 118400463}
+  moveSlowdown: 0.06
 --- !u!61 &1204649354657421731
 BoxCollider2D:
   m_ObjectHideFlags: 0

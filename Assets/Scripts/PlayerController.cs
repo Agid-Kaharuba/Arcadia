@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer mainSpriteRenderer;
     [SerializeField] private AudioSource crashAudio;
     [SerializeField] private AudioSource helicopterAudio;
+    [SerializeField, Range(0, 1)] private float moveSlowdown = 0.3f;
 
+    private Vector2 velocity;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -40,8 +42,12 @@ public class PlayerController : MonoBehaviour
             Input.GetAxis("Horizontal"), 
             Input.GetAxis("Vertical"));
         Vector2 displacement = movementInput.normalized * speed;
+        velocity += displacement;
+
+        rb.MovePosition(rb.position + velocity);
         
-        rb.MovePosition(rb.position + displacement);
+        // Slow down the helicopter
+        velocity = Vector2.Lerp(velocity, Vector2.zero, moveSlowdown);
         
         // Do sprite flipping
         if (mainSpriteRenderer != null)
